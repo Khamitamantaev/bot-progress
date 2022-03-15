@@ -19,6 +19,8 @@ export class ProgressUpdate {
      @Sender('first_name') firstName: string,
      @Ctx() context: SceneContext
    ): Promise<void> {
+     
+    //  console.log(context.message.chat.id)
      await context.scene.enter(CHANGE_PROFESSION)
    }
 
