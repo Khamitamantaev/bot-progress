@@ -34,7 +34,7 @@ export class RandomNumberScene {
   ) {
     const cbQuery = context.update.callback_query;
     const userAnswer = 'data' in cbQuery ? cbQuery.data : null;
-    const mainID = this.configService.get<string>('MAIN_ID');
+    const mainID = process.env.MAIN_ID;
     console.log('mainID: ' + mainID)
     console.log(context.update.callback_query.from)
     switch (userAnswer) {

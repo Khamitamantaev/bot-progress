@@ -12,7 +12,7 @@ import { ProgressModule } from './progress-module/progress-module';
     ConfigModule.forRoot(),
     TelegrafModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
-        token: configService.get('TELEGRAM_API_KEY'),
+        token: process.env.TELEGRAM_API_KEY,
         middlewares: [sessionMiddleware],
         include: [ProgressModule]
       }),
